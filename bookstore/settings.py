@@ -48,7 +48,26 @@ INSTALLED_APPS = [
 
     'crispy_forms',
     'crispy_bootstrap5',
+
+    'allauth',
+    'allauth.account',
 ]
+
+#django-allauth config
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
+)
+
+#Affichage des mails dans la console. Par defaut c'est smtp
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -133,8 +152,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_FINDERS = [
-    "django.contrib.staticfiles.finders.FileSystemFinder",
-    "django.contrib.staticfiles.finders.AppDirectoriesFinder"
+    "django.contrib.staticfiles.finders.FileSystemFinder", #check the static directory
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder" # check all static directories into apps
 ]
 
 # Default primary key field type
@@ -144,6 +163,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
+ACCOUNT_LOGOUT_REDIRECT = 'home'
+ACCOUNT_LOGIN_REDIRECT = 'home'
+ACCOUNT_SIGNUP_REDIRECT = 'home'
+
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
@@ -151,3 +174,5 @@ LOGOUT_REDIRECT_URL = 'home'
 # django-crispy-forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+
