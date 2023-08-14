@@ -7,6 +7,12 @@
 <br>
 <br>
 
+{% if book.cover %}
+
+  <img src="{{book.cover.url}}" alt="{{book.title}}" class="bookcover">
+
+{% endif %}
+
 <p> Title: {{ book.title }}</p>
 <p> Author: {{ book.author }}</p>
 <p> Price: {{ book.price }}</p>

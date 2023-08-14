@@ -167,6 +167,9 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder" # check all static directories into apps
 ]
 
+MEDIA_URL = '/media/' #file system path
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # URL used in templates
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
