@@ -36,3 +36,4 @@ sqlparse==0.4.4
 stevedore==5.1.0
 stripe==5.5.0
 urllib3==2.0.4
+whitenoise==6.5.0
