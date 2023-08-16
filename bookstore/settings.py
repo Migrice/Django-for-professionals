@@ -161,7 +161,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 # URL of the static file
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 # path of the static file in local development
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # location of static files for production. Lors de la mise en production, la commande collectstatic va les regrouper à un meme endroit
@@ -171,6 +171,13 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder", #check the static directory
     "django.contrib.staticfiles.finders.AppDirectoriesFinder" # check all static directories into apps
 ]
+
+STORAGES = {
+    # ...
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 MEDIA_URL = '/media/' #file system path
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # URL used in templates
