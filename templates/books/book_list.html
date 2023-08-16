@@ -6,9 +6,19 @@
 <br>
 <br>
 
-{% for book in book_list %}
-<div>
-  <h2> <a href="{{ book.get_absolute_url }}"> {{ book.title }}</a></h2>
-</div>
-{% endfor %}
+  {% for book in book_list %}
+
+  <div class="col-sm-4 text-center">
+    <a href="{{ book.get_absolute_url }}">
+
+      <img src="{{book.cover.url}}" alt="{{book.title}}" class="img-responsive center-block">
+    </a>
+    <h3> <a href="{{ book.get_absolute_url }}"> {{book.title}}</a></h3>
+    <p>{{book.author}}</p>
+  </div>
+      {% if forloop.counter|divisibleby:3 %}<div class="clearfix"></div>{% endif %}
+
+  {% endfor %}
+
+
 {% endblock content %}

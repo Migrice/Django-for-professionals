@@ -25,4 +25,6 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),# include allauth urls
     #path('accounts/', include('users.urls'))
     path('books/', include('books.urls')),
+    path('orders/', include('orders.urls')),
+    path('paypal', include('paypal.standard.ipn.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

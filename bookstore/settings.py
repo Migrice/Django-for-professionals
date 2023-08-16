@@ -31,7 +31,7 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
     'books.apps.BooksConfig',
+    'orders.apps.OrdersConfig',
 
     'crispy_forms',
     'crispy_bootstrap5',
@@ -53,7 +54,11 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'paypal.standard.ipn',
 ]
+
+PAYPAL_RECEIVER_EMAIL = "efomenakuete@gmail.com" #email utilisée pour créer le compte paypal
+PAYPAL_TEST = True #simulation de paiement
 
 #django-allauth config
 SITE_ID = 1

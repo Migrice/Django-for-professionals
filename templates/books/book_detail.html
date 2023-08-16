@@ -7,21 +7,29 @@
 <br>
 <br>
 
-{% if book.cover %}
+<div class="col-sm-4 text-center">
 
-  <img src="{{book.cover.url}}" alt="{{book.title}}" class="bookcover">
+<img src="{{book.cover.url}}" alt="{{book.title}}" class="img-responsive center-block">
 
+</div>
+
+{% if book.reviews %}
+<div>
+
+  <p>Title: {{book.title}} </p>
+  <p>Author: {{book.author}}</p>
+  <p>Price: {{ book.price }}</p>
+
+
+    <h3> Reviews </h3>
+    {% for review in book.reviews.all %}
+    <li> {{ review.review }} ({{ review.author }})</li>
+    {% endfor %}
+</div>
 {% endif %}
 
-<p> Title: {{ book.title }}</p>
-<p> Author: {{ book.author }}</p>
-<p> Price: {{ book.price }}</p>
-
-<div>
-  <h3> Reviews </h3>
-  {% for review in book.reviews.all %}
-  <li> {{ review.review }} ({{ review.author }})</li>
-  {% endfor %}
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe src="https://www.youtube.com/embed/E9Rl1GvTsiA" frameborder="0" allowfullscreen>Play</iframe>
 </div>
 
 {% endblock content %}
