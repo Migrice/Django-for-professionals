@@ -33,6 +33,14 @@ DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = ["*"]
 
+CORS_ALLOWED_ORIGINS = [
+    'https://web-production-7487.up.railway.app/',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-production-7487.up.railway.app/'
+]
+
 
 # Application definition
 
