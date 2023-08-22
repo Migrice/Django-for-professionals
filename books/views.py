@@ -18,6 +18,7 @@ class BookDetailView(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
     login_url = "account_login"
     permission_required = "books.special_status"
     permission_denied_message = "You do not have permission to access this page"
+    queryset = Book.objects.all().prefetch_related('reviews__author')
 
 class SearchResultsView(ListView):
     model = Book
