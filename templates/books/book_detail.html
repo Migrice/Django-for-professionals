@@ -3,15 +3,15 @@
 {% block title %} {{ book.title }} {% endblock title %}
 
 {% block content %}
-<br>
-<br>
-<br>
 
 <div class="col-sm-4 text-center">
 
 <img src="{{book.cover.url}}" alt="{{book.title}}" class="img-responsive center-block">
 
 </div>
+<br>
+<br>
+<br>
 
 {% if book.reviews %}
 <div>
@@ -27,9 +27,9 @@
     {% endfor %}
 </div>
 {% endif %}
-
+<!--
 <div class="embed-responsive embed-responsive-16by9">
   <iframe src="https://www.youtube.com/embed/E9Rl1GvTsiA" frameborder="0" allowfullscreen>Play</iframe>
-</div>
+</div> -->
 
 {% endblock content %}

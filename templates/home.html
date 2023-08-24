@@ -4,8 +4,70 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-<br>
-<br>
-<h1>This is our home page.</h1>
-<img class="bookcover" src="{% static 'images/pere-riche.jpeg' %}">
+<div class="banner">
+  <div class="owl-four owl-carousel" itemprop="image">
+    <img src="{% static 'images/page-banner.jpg' %}" alt="Image of Bannner">
+    <img src="{% static 'images/gallery-img8.jpg' %}" alt="Image of Bannner">
+    <img src="{% static 'images/gallery-img3.jpg' %}" alt="Image of Bannner">
+  </div>
+  <div class="container" itemprop="description">
+    <h1>welcome to our bookstore</h1>
+    <h3>With our advance search feature you can now find the right book for you...</h3>
+  </div>
+  <div id="owl-four-nav" class="owl-nav"></div>
+</div>
 {% endblock content %}
+
+{% block popularcoures %}
+<!-- Banner Close -->
+<div class="page-heading">
+  <div class="container">
+    <h2>popular courses</h2>
+  </div>
+</div>
+
+  <!-- Popular courses End -->
+  <div class="learn-courses">
+    <div class="container">
+      <div class="courses">
+        <div class="owl-one owl-carousel">
+          <div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
+            <div class="img-wrap" itemprop="image"><img src="{% static 'images/Django for professionals.jpg' %}"
+                alt="Django for professionals"></div>
+            <a href="#" class="learn-desining-banner" itemprop="name">Learn Web Designing >>></a>
+            <!-- <div class="box-body" itemprop="description">
+                   <p>Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem
+                    Ipsum lorem ipsum Lorem Ipsum lorem ipsum</p>
+                  <section itemprop="time">
+                    <p><span>Duration:</span> 4 Years</p>
+                    <p><span>Class Time:</span> 6am-12am / 11am-5pm</p>
+                    <p><span>Fee:</span> 4,00,000</p>
+                  </section>
+                </div> -->
+          </div>
+
+          <div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
+            <div class="img-wrap" itemprop="image"><img src="{% static 'images/Django for APIs.jpg' %}"
+                alt="Django for APIs"></div>
+            <a href="#" class="learn-desining-banner" itemprop="name">Learn Web Designing >>></a>
+          </div>
+
+          <div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
+            <div class="img-wrap" itemprop="image"><img src="{% static 'images/Python design patterns.jpg' %}"
+                alt="Python design patterns"></div>
+            <a href="#" class="learn-desining-banner" itemprop="name">Learn Web Designing >>></a>
+
+          </div>
+
+          <div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
+            <div class="img-wrap" itemprop="image"><img src="{% static 'images/TDD_python.jpg' %}"
+                alt="Test Driven Design"></div>
+            <a href="#" class="learn-desining-banner" itemprop="name">Learn Web Designing >>></a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock popularcoures %}
